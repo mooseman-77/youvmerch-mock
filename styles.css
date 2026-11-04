@@ -1,0 +1,244 @@
+:root {
+  --bg: #ffffff;
+  --ink: #000000;
+  --muted: #000000;
+  --rule: #000000;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.title {
+  font-weight: 400;
+  font-size: clamp(2rem, 7vw, 4rem);
+  letter-spacing: 0.02em;
+  margin: 0 0 2.5rem;
+}
+
+.note {
+  color: var(--muted);
+  margin: -1.5rem 0 2rem;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* Lead gen card */
+.card {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 0 2rem;
+  padding: 1.75rem;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field > span {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.card input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+}
+
+.card input:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.email-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.email-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-btn,
+.remove-btn {
+  font: inherit;
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--rule);
+  cursor: pointer;
+}
+
+.add-btn {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.remove-btn {
+  flex: 0 0 auto;
+  width: 2.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.add-btn:hover,
+.remove-btn:hover {
+  border-color: var(--ink);
+}
+
+/* Lead gen page: content starts at the top */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.page .title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page .card {
+  margin-bottom: 1.5rem;
+}
+
+/* Stats card */
+.stats {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: center;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+}
+
+/* Submit */
+.submit-btn {
+  font: inherit;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.75rem;
+  color: var(--bg);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  color: var(--ink);
+  background: var(--bg);
+}
+
+/* Jarvis / Instagram buttons */
+.source-btns {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.source-btn {
+  flex: 1;
+  font: inherit;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.75rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+}
+
+.source-btn:hover {
+  color: var(--bg);
+  background: var(--ink);
+}
+
+.source-btn.is-active {
+  color: var(--bg);
+  background: var(--ink);
+  cursor: default;
+}
+
+/* Fake duplicate warning */
+.form-warning {
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px dashed var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

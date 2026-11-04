@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lead Gen · YouVMerch Mock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <h1 class="title">lead gen</h1>
+
+    <section class="card stats" aria-label="Lead stats">
+      <div class="stat">
+        <span class="stat-num">12</span>
+        <span class="stat-label">Leads today</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">47</span>
+        <span class="stat-label">Leads this week</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">183</span>
+        <span class="stat-label">Leads this month</span>
+      </div>
+    </section>
+
+    <div class="source-btns">
+      <button type="button" class="source-btn">Jarvis</button>
+      <button type="button" class="source-btn is-active" aria-pressed="true">Instagram</button>
+    </div>
+
+    <form class="card" id="lead-form" novalidate>
+      <label class="field">
+        <span>Artist name</span>
+        <input type="text" name="artist" autocomplete="off" required>
+      </label>
+
+      <div class="field">
+        <span>Email</span>
+        <div id="email-list" class="email-list">
+          <div class="email-row">
+            <input type="email" name="email" aria-label="Email 1" required>
+          </div>
+        </div>
+        <button type="button" class="add-btn" id="add-email">+ Add another email</button>
+      </div>
+
+      <p class="form-warning" role="alert">
+        <strong>&#9888;</strong> Email drafted 2 days ago for &ldquo;mat@youvmerch.com&rdquo;
+      </p>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">&larr; Back</a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <script>
+    const list = document.getElementById('email-list');
+
+    // Mock only: submit does nothing.
+    document.getElementById('lead-form').addEventListener('submit', (e) => e.preventDefault());
+
+    function renumber() {
+      list.querySelectorAll('input').forEach((input, i) => {
+        input.setAttribute('aria-label', `Email ${i + 1}`);
+      });
+    }
+
+    document.getElementById('add-email').addEventListener('click', () => {
+      const row = document.createElement('div');
+      row.className = 'email-row';
+
+      const input = document.createElement('input');
+      input.type = 'email';
+      input.name = 'email';
+
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'remove-btn';
+      remove.textContent = '×';
+      remove.setAttribute('aria-label', 'Remove email');
+      remove.addEventListener('click', () => {
+        row.remove();
+        renumber();
+      });
+
+      row.append(input, remove);
+      list.append(row);
+      renumber();
+      input.focus();
+    });
+  </script>
+</body>
+</html>
