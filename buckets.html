@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buckets · YouVMerch Mock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <h1 class="title">buckets</h1>
+
+    <div class="bucket-grid">
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>New artist / new email</h2>
+        <span class="bucket-count">3</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist and email have never been seen before</p>
+      <ul class="bucket-list">
+        <li><span>Neon Harbor</span><span>booking@neonharbor.example</span></li>
+        <li><span>Lowtide Kids</span><span>mgmt@lowtidekids.example</span></li>
+        <li><span>June Arcade</span><span>june@junearcade.example</span></li>
+      </ul>
+    </section>
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>New artist / recurring email</h2>
+        <span class="bucket-count">2</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist is new, but the email is already on file for another artist</p>
+      <ul class="bucket-list">
+        <li><span>Paper Moons</span><span>roster@brightlinemgmt.example</span></li>
+        <li><span>Saint Ivory</span><span>roster@brightlinemgmt.example</span></li>
+      </ul>
+    </section>
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>Recurring artist / recurring email &mdash; no tour coming up</h2>
+        <span class="bucket-count">2</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist and email are already on file, and no upcoming tour dates are listed</p>
+      <ul class="bucket-list">
+        <li><span>Glass Coyote</span><span>info@glasscoyote.example</span></li>
+        <li><span>Test Artist</span><span>mat@youvmerch.com</span></li>
+      </ul>
+    </section>
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>Recurring artist / recurring email &mdash; tour coming up</h2>
+        <span class="bucket-count">2</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist and email are already on file, and upcoming tour dates are listed</p>
+      <ul class="bucket-list">
+        <li><span>Velvet Static</span><span>hello@velvetstatic.example</span></li>
+        <li><span>Marble Rivers</span><span>team@marblerivers.example</span></li>
+      </ul>
+    </section>
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>Recurring artist / recurring email / additional new email</h2>
+        <span class="bucket-count">2</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist and email are already on file, plus an extra email that is new to the ecosystem</p>
+      <ul class="bucket-list">
+        <li><span>Velvet Static</span><span>tour@velvetstatic.example <em>(new)</em></span></li>
+        <li><span>Glass Coyote</span><span>press@glasscoyote.example <em>(new)</em></span></li>
+      </ul>
+    </section>
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>Warm leads</h2>
+        <span class="bucket-count">2</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist has replied to or engaged with a previous email</p>
+      <ul class="bucket-list">
+        <li><span>Lowtide Kids</span><span>mgmt@lowtidekids.example</span></li>
+        <li><span>Marble Rivers</span><span>team@marblerivers.example</span></li>
+      </ul>
+    </section>
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>Past client</h2>
+        <span class="bucket-count">2</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist has ordered merch with YouVMerch before</p>
+      <ul class="bucket-list">
+        <li><span>Copper Satellites</span><span>orders@coppersatellites.example</span></li>
+        <li><span>Wild Honey Club</span><span>band@wildhoneyclub.example</span></li>
+      </ul>
+    </section>
+
+    <section class="card bucket">
+      <header class="bucket-head">
+        <h2>No hit list</h2>
+        <span class="bucket-count">2</span>
+      </header>
+      <p class="bucket-rule">Rule: Artist or email is flagged do not contact</p>
+      <ul class="bucket-list">
+        <li><span>Hollow Pines</span><span>contact@hollowpines.example</span></li>
+        <li><span>Red Lantern Co.</span><span>mgmt@redlanternco.example</span></li>
+      </ul>
+    </section>
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">&larr; Back</a></li>
+      </ul>
+    </nav>
+  </main>
+</body>
+</html>

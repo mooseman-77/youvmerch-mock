@@ -49,6 +49,15 @@
         <button type="button" class="add-btn" id="add-email">+ Add another email</button>
       </div>
 
+      <div class="field">
+        <span>Shows</span>
+        <div class="choice-btns" id="show-type">
+          <button type="button" class="source-btn" aria-pressed="false">Tour</button>
+          <button type="button" class="source-btn" aria-pressed="false">Show</button>
+          <button type="button" class="source-btn" aria-pressed="false">No shows</button>
+        </div>
+      </div>
+
       <p class="form-warning" role="alert">
         <strong>&#9888;</strong> Email drafted 2 days ago for &ldquo;mat@youvmerch.com&rdquo;
       </p>
@@ -65,6 +74,17 @@
 
   <script>
     const list = document.getElementById('email-list');
+
+    // Tour / Show / No shows: pick one.
+    const showBtns = document.querySelectorAll('#show-type button');
+    showBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        showBtns.forEach((b) => {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-pressed', b === btn);
+        });
+      });
+    });
 
     // Mock only: submit does nothing.
     document.getElementById('lead-form').addEventListener('submit', (e) => e.preventDefault());
